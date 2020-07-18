@@ -1,0 +1,12 @@
+version: '2'
+services:
+  paymentappcore-postgresql:
+    image: postgres:12.3
+    # volumes:
+    #     - ~/volumes/jhipster/PaymentAppCore/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=PaymentAppCore
+      - POSTGRES_PASSWORD=
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432:5432

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="paymentAccount">
+            <h2><span>Payment Account</span> {{ paymentAccount.id }}</h2>
+
+            <hr>
+
+            <pa-alert-error></pa-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Account Name</span></dt>
+                <dd>
+                    <span>{{ paymentAccount.accountName }}</span>
+                </dd>
+                <dt><span>Account Number</span></dt>
+                <dd>
+                    <span>{{ paymentAccount.accountNumber }}</span>
+                </dd>
+                <dt><span>Bsb</span></dt>
+                <dd>
+                    <span>{{ paymentAccount.bsb }}</span>
+                </dd>
+                <dt><span>Owner</span></dt>
+                <dd>
+                    {{ paymentAccount.ownerLogin }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/payment-account', paymentAccount.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+entity Payment(pa_payments) {
+	amount Double
+    methodType MethodType
+    methodId Long
+    created Instant
+    // contact Contact
+    // user User
+}
+
+entity PaymentCard(pa_card) {
+	fullName String
+    cardNumber Long
+    expiryMonth Integer
+    expiryYear Integer
+    // user User
+}
+
+entity PaymentAccount(pa_account) {
+	accountName String
+    accountNumber String
+    bsb String
+    // user User
+}
+
+entity Contact(pa_contact) {
+	firstName String
+    lastName String
+    email String
+    // user User
+}
+
+enum MethodType {
+	CARD, ACCOUNT
+}
+
+relationship ManyToOne {
+	Payment{owner(login)} to User
+    Payment{contact} to Contact
+    PaymentCard{owner(login)} to User
+    PaymentAccount{owner(login)} to User
+    Contact{owner(login)} to User
+}
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

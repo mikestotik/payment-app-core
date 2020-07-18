@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span>Payment Cards</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-payment-card" [routerLink]="['/payment-card/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Payment Card
+            </span>
+        </button>
+    </h2>
+
+    <pa-alert-error></pa-alert-error>
+
+    <pa-alert></pa-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="paymentCards?.length === 0">
+        <span>No paymentCards found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="paymentCards && paymentCards.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Full Name</span></th>
+                    <th scope="col" ><span>Card Number</span></th>
+                    <th scope="col" ><span>Expiry Month</span></th>
+                    <th scope="col" ><span>Expiry Year</span></th>
+                    <th scope="col" ><span>Owner</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paymentCard of paymentCards ;trackBy: trackId">
+                    <td><a [routerLink]="['/payment-card', paymentCard.id, 'view']">{{ paymentCard.id }}</a></td>
+                    <td>{{ paymentCard.fullName }}</td>
+                    <td>{{ paymentCard.cardNumber }}</td>
+                    <td>{{ paymentCard.expiryMonth }}</td>
+                    <td>{{ paymentCard.expiryYear }}</td>
+                    <td>
+                        {{ paymentCard.ownerLogin }}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/payment-card', paymentCard.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/payment-card', paymentCard.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(paymentCard)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

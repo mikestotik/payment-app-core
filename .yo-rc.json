@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.pac"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "monolith",
+    "baseName": "PaymentAppCore",
+    "packageName": "com.pac",
+    "packageFolder": "com/pac",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MTNhOGM4OWU5OWUwYzM4ZTYxOTBiOGUwMzg2ZjUzNzVlNWRjZGNlYTAzYjdjYmEwY2I5NDJmZGU2MDAwMzVkN2FmNGVhN2Q5Y2Y1ZTA1M2RiZDQwOWJiNWYwOWNiMjg5NDVlOGE4ZDBjMDA5YTlhNjAyMzAxNmVhNTIzZmJhNzc=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "sketchy",
+    "clientThemeVariant": "dark",
+    "creationTimestamp": 1594826156369,
+    "testFrameworks": [],
+    "jhiPrefix": "pa",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}

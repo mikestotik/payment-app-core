@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="paymentCard">
+            <h2><span>Payment Card</span> {{ paymentCard.id }}</h2>
+
+            <hr>
+
+            <pa-alert-error></pa-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Full Name</span></dt>
+                <dd>
+                    <span>{{ paymentCard.fullName }}</span>
+                </dd>
+                <dt><span>Card Number</span></dt>
+                <dd>
+                    <span>{{ paymentCard.cardNumber }}</span>
+                </dd>
+                <dt><span>Expiry Month</span></dt>
+                <dd>
+                    <span>{{ paymentCard.expiryMonth }}</span>
+                </dd>
+                <dt><span>Expiry Year</span></dt>
+                <dd>
+                    <span>{{ paymentCard.expiryYear }}</span>
+                </dd>
+                <dt><span>Owner</span></dt>
+                <dd>
+                    {{ paymentCard.ownerLogin }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/payment-card', paymentCard.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
