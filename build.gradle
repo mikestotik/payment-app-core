@@ -43,6 +43,10 @@ apply from: "gradle/sonar.gradle"
 apply from: "gradle/swagger.gradle"
 //jhipster-needle-gradle-apply-from - JHipster will add additional gradle scripts to be applied here
 
+bootJar {
+    launchScript()
+}
+
 if (project.hasProperty("prod") || project.hasProperty("gae")) {
     apply from: "gradle/profile_prod.gradle"
 } else {
@@ -86,7 +90,7 @@ eclipse {
 defaultTasks "bootRun"
 
 springBoot {
-    mainClassName = "com.pac.PaymentAppCoreApp"
+    mainClassName = "com.pac.PaymentAppCore"
 }
 
 test {
