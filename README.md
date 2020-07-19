@@ -5,8 +5,8 @@ This application was generated using JHipster 6.10.1, you can find documentation
 ## FROM AUTHOR!!
 
 ```bash
-# 1) build app
-./gradlew -Pprod clean assemble
+# 1) build app (prod)
+./gradlew clean assemble
 
 # 2) run database (You need to Install Docker before!!!)
 docker-compose -f src/main/docker/postgresql.yml up -d
