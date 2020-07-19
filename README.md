@@ -8,7 +8,10 @@ This application was generated using JHipster 6.10.1, you can find documentation
 # 1) build app
 ./gradlew -Pprod clean bootJar
 
-# 2) run
+# 2) run database
+docker-compose -f src/main/docker/postgresql.yml up -d
+
+# 3) run app
 java -jar build/libs/*.jar
 ```
 
