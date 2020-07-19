@@ -2,6 +2,16 @@
 
 This application was generated using JHipster 6.10.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.1](https://www.jhipster.tech/documentation-archive/v6.10.1).
 
+## FROM AUTHOR!!
+
+```bash
+# 1) build app
+./gradlew -Pprod clean bootJar
+
+# 2) run
+java -jar build/libs/*.jar
+```
+
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
